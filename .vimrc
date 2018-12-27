@@ -65,6 +65,12 @@ nmap <Leader>e :CtrlPMRUFiles<cr>
 "Tip: run ctags -R to regenerated the index.
 nmap <Leader>f :tag<space>
 
+"-------------Laravel-specific--------------"
+nmap <Leader>lr :e routes/web.php<cr>
+nmap <Leader>lm :!php artisan make:
+nmap <Leader>lfc :CtrlP<cr>app/Http/Controllers
+
+
 
 "-------------Auto-Commands--------------"
 "Automatically source the Vimrc file on save.
