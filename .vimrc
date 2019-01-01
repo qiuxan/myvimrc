@@ -11,7 +11,10 @@ set number
 set noerrorbells visualbell t_vb=               			"No damn bells!
 set autowriteall                                                        "Automatically write the file when switching buffers.
 set complete=.,w,b,u 							"Set our desired autocompletion matching.
-
+set tabstop=8
+set expandtab
+set softtabstop=4
+set shiftwidth=4
 "-------------Plugins--------------"
 "/
 "/Ctrlp
@@ -30,6 +33,22 @@ let NERDTreeHijackNetrw = 0
 "/
 set grepprg=ag
 let g:grep_cmd_opts = '--line-numbers --noheading'
+
+"/
+"/Vim-php-cs-fixer
+"/
+
+let g:php_cs_fixer_level = "psr2"                   " options: --level (default:symfony)
+
+nnoremap <silent><leader>pf :call PhpCsFixerFixDirectory()<CR>
+
+
+"/
+"/ pdv
+"/
+let g:pdv_template_dir = $HOME ."/.vim/bundle/pdv/templates_snip"
+
+nnoremap <leader>d :call pdv#DocumentWithSnip()<CR>
 
 "-------------Visuals--------------"
 colorscheme atom-dark
@@ -64,7 +83,7 @@ nmap <Leader>es :e ~/.vim/snippets/
 nmap <Leader><space> :nohlsearch<cr>
 "make NERDTree eaiser to toggle
 nmap <Leader>1 :NERDTreeToggle<cr>
-nmap <Leader-R> :CtrlPBufTag<cr>
+nmap <Leader>r :CtrlPBufTag<cr>
 nmap <Leader>e :CtrlPMRUFiles<cr>
 "Quickly browse to any tag/symbol in the project.
 "Tip: run ctags -R to regenerated the index.
